@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import search from "../assets/Search.png"
+import Search from "./Search";
 
 const Nav = () => {
     return (
     <NavBar>
         <BigName>Milestorm</BigName>
         <div className="x">
-            <input type="search" name="hotel" id="hotel" placeholder="Search for hotels"/>
-            <Search src={search} alt=""/>
+            <Search/>
         </div>
         <div>
             <a href="/">About</a>
@@ -54,12 +53,6 @@ const NavBar = styled.nav`
     color: white;
     text-decoration: none;
   }
-`
-
-const Search = styled.img`
-  height: 30px;
-  width: 30px;
-  object-fit: cover;
 `
 
 const BigName = styled.h2`
