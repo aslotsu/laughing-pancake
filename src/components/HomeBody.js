@@ -11,12 +11,14 @@ const HomeBody = () => {
 
 
                     <Card key={Math.random()}>
-                        <span>{hostel.name}</span>
 
                         {/*<span>{hostel.prices.map(price => <span>{price}</span>)}</span>*/}
                         <br/>
-                        <span>{hostel.location}</span>
-                        <span>{hostel.pictures}</span>
+                        <Info>
+                            <span>{hostel.name}</span>
+                            <span>{hostel.location}</span>
+                            <span>{hostel.pictures}</span>
+                        </Info>
                     </Card>
 
             )}
@@ -31,12 +33,10 @@ const Card = styled.div`
   min-height: 200px;
   width: 20vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 12px;
   min-width: 200px;
   border: 6px solid #00347d;
-  padding: 70px;
+  
   
   & span {
     //color: dodgerblue;
@@ -65,5 +65,17 @@ const List = styled.div`
   //border: 2px solid greenyellow;
   margin: 0 10vw;
   
+`
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rebeccapurple;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+
 `
 export default HomeBody

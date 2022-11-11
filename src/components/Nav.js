@@ -5,9 +5,7 @@ const Nav = () => {
     return (
     <NavBar>
         <BigName>Milestorm</BigName>
-        <div className="x">
             <Search/>
-        </div>
         <div>
             <a href="/">About</a>
             <a href="/">Further</a>
@@ -18,6 +16,7 @@ const Nav = () => {
 
 const NavBar = styled.nav`
   display: flex;
+  z-index: 4;
   width: 100%;
   min-width: 400px;
   height: 20vh;
@@ -29,7 +28,6 @@ const NavBar = styled.nav`
   justify-content: space-around;
   align-items: center;
   & input {
-    width: 90%;
     height: 40px;
     border: none;
     min-width: 200px;
@@ -47,7 +45,11 @@ const NavBar = styled.nav`
    }
   
   & h2 {
-    color: dodgerblue;
+    color: white;
+    font-size: 3.5rem;
+    @media (max-width: 400px) {
+      font-size: 1rem;
+    }
   }
   & a {
     color: white;
@@ -56,10 +58,11 @@ const NavBar = styled.nav`
 `
 
 const BigName = styled.h2`
-  //max-width: 150px;
   @media (max-width: 800px){
     font-size: 10px;
   }
 `
+
+
 
 export default Nav
