@@ -5,7 +5,7 @@ const Nav = () => {
     return (
     <NavBar>
         <BigName>Milestorm</BigName>
-            <Search/>
+        <Search/>
         <div>
             <a href="/">About</a>
             <a href="/">Further</a>

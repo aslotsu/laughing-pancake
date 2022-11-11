@@ -1,5 +1,6 @@
 import {hostels} from "../hostels";
 import styled from "styled-components";
+import Lisa from "../assets/hostels/delisa.jpg"
 
 const HomeBody = () => {
 
@@ -7,20 +8,18 @@ const HomeBody = () => {
         <>
             <SafeBar />
             <List>
-            {       hostels.map(hostel =>
-
-
+            {hostels.map(hostel =>
                     <Card key={Math.random()}>
 
-                        {/*<span>{hostel.prices.map(price => <span>{price}</span>)}</span>*/}
-                        <br/>
+                        <div>
+                            {/*<HostelImage src={Lisa} alt=""/>*/}
+                        </div>
                         <Info>
                             <span>{hostel.name}</span>
                             <span>{hostel.location}</span>
-                            <span>{hostel.pictures}</span>
+                            {/*<span>{hostel.pictures}</span>*/}
                         </Info>
                     </Card>
-
             )}
             </List>
         </>
@@ -33,6 +32,7 @@ const Card = styled.div`
   min-height: 200px;
   width: 20vw;
   display: flex;
+  flex-direction: column;
   border-radius: 12px;
   min-width: 200px;
   border: 6px solid #00347d;
@@ -50,6 +50,12 @@ const Card = styled.div`
     transition: all 1.2s ease;
   }
 
+`
+
+const HostelImage = styled.img`
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
 `
 
 const SafeBar = styled.div`
@@ -70,10 +76,11 @@ const List = styled.div`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  border: 2px solid rebeccapurple;
+  border: 2px solid dodgerblue;
   position: relative;
-  bottom: 0;
+  top: calc(30vh - 50px);
   left: 0;
+  right: 0;
   height: 40px;
   width: 100%;
 
