@@ -9,30 +9,56 @@ const Search = () => {
         console.log(term)
     }
     return (
-        <div>
+        <Home>
             <SearchInput type="search" name="search" id="search" placeholder={"Search for hostels"} value={term} onChange={searchHandler} />
             <GoSearch>Search</GoSearch>
-        </div>
+        </Home>
     )
 }
 
+const Home = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 const SearchInput = styled.input`
-  width: 300px;
+  width: 25vw;
+  height: 30px;
+  //border-radius: 12px;
+  padding: 16px;
+  border: none transparent;
+  outline: none transparent;
+
+  min-width: 200px;
   @media (max-width: 400px){
     width: 120px;
   }
+  
+  &:focus {
+    outline: none transparent;
+    border-top: none transparent;
+    border-left: none transparent;
+    border-right: none transparent;
+    border-bottom: 3px solid #00347d;
+  };
+  
+  transition: all 0.2s ease;
 `
 
 const GoSearch = styled.button`
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid #00347d;
   border-radius: 6px;
   padding: 8px;
-  color: white;
+  margin: 10px 10vw;
+  color: #00347d;
+  width: 100px;
   font-size: 1.222rem;
   &:hover {
-    transform: scale(1.2);
-    transition: all 0.8s ease;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
   }
+  //margin-left: 10vw;
 `
 export default Search

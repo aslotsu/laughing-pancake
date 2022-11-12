@@ -2,10 +2,11 @@ import styled from "styled-components";
 import Search from "./Search";
 
 const Nav = () => {
+
     return (
     <NavBar>
         <BigName>Milestorm</BigName>
-        <Search/>
+        {/*<Search/>*/}
         <div>
             <a href="/">About</a>
             <a href="/">Further</a>
@@ -13,6 +14,7 @@ const Nav = () => {
         </div>
     </NavBar>)
 }
+
 
 const NavBar = styled.nav`
   display: flex;
@@ -42,19 +44,25 @@ const NavBar = styled.nav`
      justify-content: space-around;
      align-items: center;
      //border: 1px solid green;
+     @media (max-width: 1024px){
+       display: none;
+     }
    }
   
   & h2 {
     color: white;
     font-size: 3.5rem;
     @media (max-width: 400px) {
-      font-size: 1rem;
+      //font-size: 1rem;
+      margin: 0 10vw;
     }
   }
   & a {
     color: white;
     text-decoration: none;
   }
+  
+
 `
 
 const BigName = styled.h2`

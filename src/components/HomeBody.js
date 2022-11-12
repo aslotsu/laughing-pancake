@@ -1,19 +1,21 @@
 import {hostels} from "../hostels";
 import styled from "styled-components";
-import Lisa from "../assets/hostels/delisa.jpg"
+import Search from "./Search";
+// import Lisa from "../assets/hostels/delisa.jpg"
 
 const HomeBody = () => {
 
     return  (
         <>
             <SafeBar />
+            <Search />
             <List>
             {hostels.map(hostel =>
                     <Card key={Math.random()}>
 
-                        <div>
+                        <Image>
                             {/*<HostelImage src={Lisa} alt=""/>*/}
-                        </div>
+                        </Image>
                         <Info>
                             <span>{hostel.name}</span>
                             <span>{hostel.location}</span>
@@ -39,11 +41,8 @@ const Card = styled.div`
   
   
   & span {
-    //color: dodgerblue;
-    //font-size: 2rem;
     font-weight: bolder;
   }
-  //box-shadow: 1px 1px 1px red;
   &:hover {
     cursor: pointer;
     scale: 1.2;
@@ -52,10 +51,8 @@ const Card = styled.div`
 
 `
 
-const HostelImage = styled.img`
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
+const Image = styled.img`
+  
 `
 
 const SafeBar = styled.div`
@@ -68,7 +65,6 @@ const List = styled.div`
   flex-flow: row wrap;
   justify-content: space-around;
   width: 80vw;
-  //border: 2px solid greenyellow;
   margin: 0 10vw;
   
 `
@@ -76,7 +72,6 @@ const List = styled.div`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  border: 2px solid dodgerblue;
   position: relative;
   top: calc(30vh - 50px);
   left: 0;
@@ -85,4 +80,8 @@ const Info = styled.div`
   width: 100%;
 
 `
+
+
+
+
 export default HomeBody
